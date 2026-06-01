@@ -1,0 +1,31 @@
+{
+  "record": {
+    "pressToStop": "Klicken, um die Aufnahme zu beenden",
+    "error": "Es tut uns leid, ChargeGPT ist im Moment nicht verfügbar. Bitte versuche es später noch einmal.",
+    "errorCountry": "Entschuldige, ich kenne bisher nur Ladestationen in folgenden Ländern: Germany, Poland, Czech, Austria, Italy, Switzerland, France, Spain, Portugal, Luxembourg, Belgium, Netherlands, Ireland, United Kingdom, Denmark, Norway, Sweden, Finland.",
+    "errorAudioLength": "Es tut mir leid. Deine Aufnahme überschreitet die maximale Aufnahmezeit. Bitte versuche es mit einer kürzeren Anfrage.",
+    "reset": "Zurücksetzen",
+    "disclaimer": "Keine Garantien. Keine Haftung.",
+    "errorAudio": "Spreche bitte lauter oder überprüfe dein Mikrofon!",
+    "feedback": "War das hilfreich?",
+    "placeholder": "Ich möchte...",
+    "maxCharacters": "Die von Dir eingegebenen Zeichen überschreiten die maximale Zeichenanzahl von 280. Bitte kürze Deine Eingabe auf das angegebene Zeichenlimit und versuche ss erneut.",
+    "faq": "FAQ",
+    "alwaysShareLocation": "Standort bei jeder Anfrage teilen",
+    "shareLocationWhenNeeded": "Freigabe des Standorts nur bei Bedarf"
+  },
+  "suggestionTexts": [
+    " Am Stachus in München morgen um 14 Uhr.",
+    "In meiner Nähe bei einem McDonald's und mit 150 kW.",
+    "AC-Ladung im Berliner Stadtzentrum.",
+    "In einem italienischen Restaurant im Münchener Osten.",
+    "Laden mit mindestens 50 kW in meiner Nähe.",
+    "An einem CCS-Ladepunkt in Dortmund. Ich bin in 3 Stunden dort.",
+    "Auf dem Weg nach Hamburg mit mindestens 150 kW.",
+    "An einem EnBW-Ladepunkt auf dem Weg von Stuttgart nach München.",
+    "Was ist der Unterschied zwischen AC- und DC-Ladung?",
+    "Ist es sicher, bei Regen zu laden?",
+    "Was kann ich hier tun?"
+  ],
+  "moreSuggestions": "Weitere Anfragenideen."
+}

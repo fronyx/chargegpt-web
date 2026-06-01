@@ -1,0 +1,31 @@
+{
+  "record": {
+    "pressToStop": "Click to stop recording",
+    "error": "We are sorry, ChargeGPT is not available at the moment. Please try again later.",
+    "errorCountry": "Sorry, I only know charging stations in the following countries so far: Germany, Poland, Czech, Austria, Italy, Switzerland, France, Spain, Portugal, Luxembourg, Belgium, Netherlands, Ireland, United Kingdom, Denmark, Norway, Sweden, Finland.",
+    "errorAudioLength": "I'm sorry. Your recording is exceeding the maximum recording time. Please try with a shorter request.",
+    "reset": "Reset",
+    "disclaimer": "No warranties. No liability.",
+    "errorAudio": "Please speak up or check your microphone!",
+    "feedback": "Was that helpful?",
+    "placeholder": "I want to...",
+    "maxCharacters": "The input you provided exceeds the maximum character limit of 280. Please shorten your input to meet the specified character limit and try again",
+    "faq": "FAQ",
+    "alwaysShareLocation": "Location shared with every request",
+    "shareLocationWhenNeeded": "Location shared only when needed"
+  },
+  "suggestionTexts": [
+    "At the Stachus in Munich tomorrow at 2pm.",
+    "Near me at a McDonalds and with 150kW.",
+    "AC charging in Berlin city center.",
+    "At a Italian restaurant in Munich East.",
+    "Charging with at least 50kW near me.",
+    "At a CCS charge point in Dortmund. I’ll be there in 3 hours.",
+    "On my way to Hamburg with at least 150kW.",
+    "At a EnBW charge point on my way from Stuttgart to Munich.",
+    "What is the difference between AC and DC charging?",
+    "Is it safe to charge in the rain?",
+    "What can I do here?"
+  ],
+  "moreSuggestions": "More request ideas."
+}

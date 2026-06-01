@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  width: calc(100% - 40px);
+  justify-content: center;
+}
+
+.c-right {
+  width: calc(100% - 40px);
+  text-align: center;
+  padding: 20px;
+}
+
+p {
+  color: white;
+  margin-bottom: 0;
+}
+
+a, p {
+  padding: 12px 20px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff9900
+  }
+}
+
+@media (max-width: 780px) {
+  .c-right, .c-left {
+    flex: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  :host {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

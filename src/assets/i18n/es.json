@@ -1,0 +1,31 @@
+{
+  "record": {
+    "pressToStop": "Haz clic para detener la grabación",
+    "error": "Lo sentimos, ChargeGPT no está disponible en este momento. Por favor, inténtalo de nuevo más tarde.",
+    "errorCountry": "Lo siento, solo conozco estaciones de carga en los siguientes países hasta ahora: Alemania, Polonia, República Checa, Austria, Italia, Suiza, Francia, España, Portugal, Luxemburgo, Bélgica, Países Bajos, Irlanda, Reino Unido, Dinamarca, Noruega, Suecia, Finlandia.",
+    "errorAudioLength": "Lo siento. Tu grabación excede el tiempo máximo de grabación. Por favor, intenta con una solicitud más corta.",
+    "reset": "Restablecer",
+    "disclaimer": "Sin garantías. Sin responsabilidad.",
+    "errorAudio": "¡Por favor, habla más alto o verifica tu micrófono!",
+    "feedback": "¿Fue útil?",
+    "placeholder": "Quiero...",
+    "maxCharacters": "La entrada que proporcionaste supera el límite máximo de caracteres de 280. Por favor, acorta tu entrada para cumplir con el límite de caracteres especificado e inténtalo de nuevo.",
+    "faq": "FAQ",
+    "alwaysShareLocation": "Ubicación compartida con cada solicitud",
+    "shareLocationWhenNeeded": "Ubicación compartida sólo cuando es necesario"
+  },
+  "suggestionTexts": [
+    "Mañana a las 14:00 en el Stachus de Múnich.",
+    "Cerca de mí en un McDonald's con 150 kW.",
+    "Carga en AC en el centro de la ciudad de Berlín.",
+    "En un restaurante italiano al este de Múnich.",
+    "Cargar con al menos 50 kW cerca de mí.",
+    "En un punto de carga CCS en Dortmund. Estaré allí en 3 horas.",
+    "En camino a Hamburgo con al menos 150 kW.",
+    "En un punto de carga de EnBW en mi camino de Stuttgart a Múnich.",
+    "¿Cuál es la diferencia entre la carga AC y DC?",
+    "¿Es seguro cargar bajo la lluvia?",
+    "¿Qué puedo hacer aquí?"
+  ],
+  "moreSuggestions": "Más ideas de solicitudes."
+}

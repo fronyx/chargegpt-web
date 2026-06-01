@@ -1,0 +1,184 @@
+<mat-drawer-container class="c-sidenav-container" fullscreen autosize>
+  <mat-drawer #drawer position="end" class="c-sidenav-drawer" mode="over">
+    <div class="c-drawer">
+      <button mat-button (click)="drawer.toggle()" class="close-button">
+        <mat-icon class="c-close-icon">{{ 'close' }}</mat-icon>
+      </button>
+      <div *ngFor="let text of 'suggestionTexts' | translate">
+        <div class="c-suggestion c-suggestion-bubble-full" (click)="setSuggestionText(text); drawer.toggle()">
+          {{ text }}
+        </div>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <chargegpt-header xmlns="http://www.w3.org/1999/html"></chargegpt-header>
+
+    <chargegpt-layout>
+      <div class="c-title">
+        <h1 class="c-title-name">ChargeGPT</h1>
+
+        <div matTooltip="{{ 'record.disclaimer' | translate }}" class="c-public-beta" matTooltipClass="custom-tooltip">Public Beta</div>
+      </div>
+
+      <div class="c-chat">
+        <div class="c-settings">
+          <div class="c-lang-selector">
+            <button
+              mat-button
+              [disabled]="isLoading$ | async"
+              [matMenuTriggerFor]="language"
+              (menuOpened)="triggerMenu()"
+              (menuClosed)="triggerMenu()"
+            >
+              {{ selectedLanguage }}
+              <mat-icon class="{{ selectedIcon }}"></mat-icon>
+              <mat-icon iconPositionEnd>{{ menuOpen ? 'arrow_drop_up' : 'arrow_drop_down' }}</mat-icon>
+            </button>
+          </div>
+          <mat-menu #language="matMenu" yPosition="below" class="c-lang-menu">
+            <ng-template matMenuContent>
+              <button
+                mat-menu-item
+                class="c-lang-item"
+                *ngFor="let language of languages"
+                (click)="changeLanguage(language)"
+                [value]="language.value"
+              >
+                {{ language.name }}
+                <mat-icon class="{{ language.iconCode }}"></mat-icon>
+              </button>
+            </ng-template>
+          </mat-menu>
+
+          <div *ngIf="enableShareUserLocationFeatures">
+            <mat-slide-toggle [(ngModel)]="isAlwaysShareUserLocation" class="c-location-slider">
+              <p class="c-share-location" *ngIf="!!isAlwaysShareUserLocation">{{ 'record.alwaysShareLocation' | translate }}</p>
+              <p class="c-share-location" *ngIf="!isAlwaysShareUserLocation">{{ 'record.shareLocationWhenNeeded' | translate }}</p>
+            </mat-slide-toggle>
+          </div>
+        </div>
+
+        <div *ngFor="let query of chatHistoryView; let i = index">
+          <div class="c-chat-bubble-user c-bubble-chat" *ngIf="query.role === 'user'">
+            {{ query.content }}
+          </div>
+          <div class="c-chat-bubble-assistant c-bubble-chat" *ngIf="query.role === 'assistant'">
+            {{ query.content }}
+            <div
+              id="{{ 'mapContainer' + query.mapCount }}"
+              class="c-map"
+              *ngIf="
+                query.content.includes('Based on') ||
+                query.content.includes('Basierend auf der') ||
+                query.content.includes('Basándome en la disponibilidad') ||
+                query.content.includes('Sobre la base') ||
+                query.content.includes('En fonction de la') ||
+                query.content.includes('Com base na') ||
+                query.content.includes('Na základě')
+              "
+            ></div>
+
+            <div class="c-faq" *ngIf="query.isRequestOutOfScope">
+              <button class="c-button-faq" (click)="openLink('https://example.com/chargegpt-faq')">
+                <mat-label class="c-text-faq">{{ 'record.faq' | translate }}</mat-label>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="c-chat-bubble-assistant c-bubble-chat" *ngIf="(isShowFeedback$ | async) && !(isLoading$ | async)">
+          <div class="c-feedback">
+            <div class="c-text-feedback">{{ 'record.feedback' | translate }}</div>
+            <button class="c-button-feedback" (click)="submitFeedback('+1')" [disabled]="submittedFeedbackValue$ | async">
+              <mat-icon matSuffix [ngClass]="(submittedFeedbackValue$ | async)?.includes('+1') ? 'c-button-feedback-sent' : 'c-icon-feedback'">
+                thumb_up
+              </mat-icon>
+            </button>
+            <button class="c-button-feedback" (click)="submitFeedback('-1')" [disabled]="submittedFeedbackValue$ | async">
+              <mat-icon matSuffix [ngClass]="(submittedFeedbackValue$ | async)?.includes('-1') ? 'c-button-feedback-sent' : 'c-icon-feedback'">
+                thumb_down
+              </mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div *ngIf="isLoading$ | async" class="c-chat c-loading">
+          <div class="c-loading-dot"></div>
+        </div>
+
+        <div class="c-first-suggestion" *ngIf="!!showFirstSuggestions">
+          <div class="c-suggestions">
+            <div *ngFor="let text of ('suggestionTexts' | translate).slice(0, 3)" class="c-suggestion-bubble c-suggestion">
+              <div (click)="setSuggestionText(text)">
+                {{ text }}
+              </div>
+            </div>
+            <div class="c-suggestion-bubble c-suggestion" (click)="drawer.toggle()" *ngIf="!!showSuggestions">
+              {{ 'moreSuggestions' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <audio #pollyAudio>
+          <source type="audio/mp3" #pollyAudioSource />
+        </audio>
+      </div>
+
+      <div>
+        <audio *ngIf="playSuccessfulSound" autoplay>
+          <source src="../../assets/mixkit-correct-answer-tone-2870.mp3" type="audio/mp3" />
+        </audio>
+      </div>
+
+      <form>
+        <div class="c-form" [ngClass]="isAudioRecording ? 'c-form-recording' : 'c-form-record'">
+          <input
+            matInput
+            placeholder="{{ 'record.placeholder' | translate }}"
+            maxlength="281"
+            *ngIf="!isAudioRecording"
+            [formControl]="textFormControl"
+            #input
+          />
+          <button
+            class="c-button-record"
+            (click)="!isAudioRecording ? startAudioRecording() : stopAudioRecording()"
+            [disabled]="isLoading$ | async"
+            *ngIf="isAudioRecording"
+          >
+            <mat-label *ngIf="isAudioRecording">{{ 'record.pressToStop' | translate }}</mat-label>
+          </button>
+          <button
+            mat-icon-button
+            matSuffix
+            *ngIf="textFormControl.value!.length === 0"
+            (click)="!isAudioRecording ? startAudioRecording() : stopAudioRecording()"
+            [disabled]="isLoading$ | async"
+          >
+            <mat-icon matSuffix>mic</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matSuffix
+            *ngIf="textFormControl.value!.length > 0"
+            (click)="submitText(textFormControl.value)"
+            [disabled]="(isLoading$ | async) || textFormControl.value!.length < 0"
+          >
+            <mat-icon matSuffix>send</mat-icon>
+          </button>
+        </div>
+      </form>
+      <mat-error class="c-error" *ngIf="textFormControl.invalid">{{ 'record.maxCharacters' | translate }}</mat-error>
+
+      <div class="c.reset">
+        <button class="c-reset-button" (click)="resetChargeGPT()" [disabled]="isLoading$ | async">
+          {{ 'record.reset' | translate }}
+        </button>
+      </div>
+    </chargegpt-layout>
+    <chargegpt-footer></chargegpt-footer>
+  </mat-drawer-content>
+</mat-drawer-container>

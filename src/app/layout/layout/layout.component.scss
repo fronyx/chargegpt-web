@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+  min-height: calc(100% - 220px);
+
+  ::ng-deep {
+    h1, h2, h3, p {
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  :host {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

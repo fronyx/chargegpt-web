@@ -1,0 +1,31 @@
+{
+  "record": {
+    "pressToStop": "Cliquez pour arrêter l'enregistrement",
+    "error": "Nous sommes désolés, ChargeGPT n'est pas disponible pour le moment. Veuillez réessayer plus tard.",
+    "errorCountry": "Désolé, je connais uniquement les stations de charge dans les pays suivants jusqu'à présent : Allemagne, Pologne, République tchèque, Autriche, Italie, Suisse, France, Espagne, Portugal, Luxembourg, Belgique, Pays-Bas, Irlande, Royaume-Uni, Danemark, Norvège, Suède, Finlande.",
+    "errorAudioLength": "Désolé. Votre enregistrement dépasse la durée maximale d'enregistrement. Veuillez réessayer avec une demande plus courte.",
+    "reset": "Réinitialiser",
+    "disclaimer": "Aucune garantie. Aucune responsabilité.",
+    "errorAudio": "Veuillez parler plus fort ou vérifier votre microphone !",
+    "feedback": "C'était utile ?",
+    "placeholder": "Je veux...",
+    "maxCharacters": "La saisie que vous avez fournie dépasse la limite maximale de caractères de 280. Veuillez raccourcir votre saisie pour respecter la limite de caractères spécifiée et réessayez.",
+    "faq": "FAQ",
+    "alwaysShareLocation": "Localisation partagée à chaque demande",
+    "shareLocationWhenNeeded": "L'emplacement n'est partagé qu'en cas de besoin"
+  },
+  "suggestionTexts": [
+    "Demain à 14h à la Stachus de Munich.",
+    "Près de moi dans un McDonald's avec 150 kW.",
+    "Recharge en AC dans le centre-ville de Berlin.",
+    "Dans un restaurant italien à l'est de Munich.",
+    "Recharge avec au moins 50 kW près de moi.",
+    "À un point de recharge CCS à Dortmund. J’y serai dans 3 heures.",
+    "En route vers Hambourg avec au moins 150 kW.",
+    "À un point de recharge EnBW sur mon trajet de Stuttgart à Munich.",
+    "Quelle est la différence entre la recharge AC et DC ?",
+    "Est-il sûr de recharger sous la pluie ?",
+    "Que puis-je faire ici?"
+  ],
+  "moreSuggestions": "Plus d'idées de demandes."
+}

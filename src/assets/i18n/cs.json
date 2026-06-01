@@ -1,0 +1,31 @@
+{
+  "record": {
+    "pressToStop": "Kliknutím zastavíte nahrávání",
+    "error": "Omlouváme se, ale služba ChargeGPT není v tuto chvíli k dispozici. Zkuste to prosím později.",
+    "errorCountry": "Omlouváme se, zatím znám pouze nabíjecí stanice v následujících zemích: Německo, Polsko, Česká republika, Rakousko, Itálie, Švýcarsko, Francie, Španělsko, Portugalsko, Lucembursko, Belgie, Nizozemsko, Irsko, Velká Británie, Dánsko, Norsko, Švédsko, Finsko.",
+    "errorAudioLength": "Omlouvám se. Vaše nahrávka překračuje maximální dobu nahrávání. Zkuste to prosím s kratším požadavkem.",
+    "reset": "Resetovat",
+    "disclaimer": "Žádné záruky. Žádná odpovědnost.",
+    "errorAudio": "Prosím, ozvěte se nebo zkontrolujte svůj mikrofon!",
+    "feedback": "Bylo to užitečné?",
+    "placeholder": "I want to...",
+    "maxCharacters": "Vámi zadaný vstup překračuje maximální limit 280 znaků. Zkraťte prosím svůj vstup tak, aby splňoval zadaný limit znaků, a zkuste to znovu.",
+    "faq": "FAQ",
+    "alwaysShareLocation": "Poloha sdílená s každým požadavkem",
+    "shareLocationWhenNeeded": "Poloha sdílená pouze v případě potřeby"
+  },
+  "suggestionTexts": [
+    "Zítra ve 14:00 na Stachusu v Mnichově.",
+    "Blízko mě v McDonald's a s výkonem 150 kW.",
+    "AC nabíjení v centru města Berlín.",
+    "V italské restauraci na východě Mnichova.",
+    "Nabíjení s minimálně 50 kW blízko mě.",
+    "Na nabíjecím místě CCS v Dortmundu. Budu tam za 3 hodiny.",
+    "Na cestě do Hamburku s minimálně 150 kW.",
+    "Na nabíjecím místě EnBW na cestě ze Stuttgartu do Mnichova.",
+    "Jaký je rozdíl mezi AC a DC nabíjením?",
+    "Je bezpečné nabíjet v dešti?",
+    "Co tady můžu dělat?"
+  ],
+  "moreSuggestions": "Další nápady na žádosti."
+}

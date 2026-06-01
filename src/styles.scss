@@ -1,0 +1,158 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+@import 'app/themes/variables';
+@import '/node_modules/flag-icons/css/flag-icons.min.css';
+
+html, body {
+  height: 100%;
+  font-family: 'Mulish';
+}
+
+body {
+  margin: 0;
+  background-color: var(--blue);
+  font-size: 18px;
+
+  h1 {
+    font-size: 88px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  button {
+    font-size: 18px !important;
+    font-family: 'Mulish';
+  }
+
+  input {
+    font-family: 'Mulish';
+    font-size: 18px !important;
+  }
+}
+
+.c-lang-menu {
+  .mat-mdc-menu-content {
+    padding: 0 !important;
+  }
+}
+
+.c-location-slider {
+  .mat-mdc-slide-toggle {
+    opacity: 0;
+  }
+
+  .mdc-switch__handle {
+    border-radius: 5px !important;
+  }
+
+  .mdc-switch__icon--on {
+    height: 16px !important;
+    width: 16px !important;
+    border: 1px !important;
+    border-radius: 5px !important;
+    background-color: var(--orange) !important;
+    
+  }
+
+  .mdc-switch__icon--off {
+    height: 16px !important;
+    width: 16px !important;
+    border: 1px !important;
+    border-radius: 5px !important;
+    background-color: hsl(0, 0%, 33%) !important;
+  }
+
+  .mdc-switch__track {
+    border-radius: 5px !important;
+    border: 1px !important;
+    height: 16px !important;
+  }
+
+  .mdc-switch__track::after {
+    background-color: #f5dcbb !important;
+  }
+}
+
+.custom-tooltip {
+  font-size: 12px !important;
+}
+
+.c-label-marker {
+  background-color: var(--orange);
+  color: black;
+  font-size: 15px;
+  padding: 2px 6px;
+  position: relative;
+  border: 1px solid #0E1014;
+  border-radius: 5px;
+}
+
+.c-label-marker::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-left: 4px solid #0E1014;
+  border-right: 4px solid #0E1014;
+  border-top: 6px solid var(--orange);
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+
+    h1 {
+      font-size: 60px !important;
+    }
+
+    h2 {
+      font-size: 32px !important;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    button {
+      font-size: 14px !important;
+    }
+
+    input {
+      font-size: 14px !important;
+    }
+
+    a {
+      font-size: 14px !important;
+    }
+
+    .custom-tooltip {
+      font-size: 10px !important;
+    }
+
+    .c-label-marker {
+      font-size: 13px;
+    }
+  }
+}
+
+.c-dot-marker {
+  height: 10px;
+  width: 10px;
+  background-color: var(--orange);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.c-dot-marker-route {
+  height: 6px;
+  width: 6px;
+  background-color: #fd91035e;
+  display: inline-block;
+}
