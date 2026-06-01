@@ -1,16 +1,16 @@
 # ChargeGPT Web
 
-Open-source frontend for the ChargeGPT demo.
+ChargeGPT Web is the browser client for ChargeGPT. It provides the chat interface and connects to the ChargeGPT API backend.
 
 ## Setup
 
 1. Install dependencies with `npm ci`.
-2. Update the files in `src/environments/` with your local values.
+2. Update the files in `src/environments/` with your local configuration.
 3. Start the app with `npm run start`.
 
 ## Environment
 
-The app expects these values in the environment files:
+The app reads its runtime configuration from the environment files:
 
 - `API_TOKEN`
 - `SENTRY_DSN`
@@ -23,7 +23,7 @@ The app expects these values in the environment files:
 - `BRAND_NAME`
 - `COOKIE_DOMAIN`
 
-`environment.ts` is the production/default file, `environment.development.ts` is used for local development, and `environment.staging.ts` is available for a staging build.
+`environment.ts` is the default production configuration, `environment.development.ts` is used for local development, and `environment.staging.ts` is available for staging builds.
 
 ## Build
 
